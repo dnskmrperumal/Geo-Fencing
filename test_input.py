@@ -46,5 +46,5 @@ interpreter.invoke()
 
 # Get output
 output_data = interpreter.get_tensor(output_details[0]['index'])
-print("✅ Correct Median Coordinates:", output_data)
+print("Correct Median Coordinates:", output_data)
 
