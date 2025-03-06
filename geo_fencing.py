@@ -1,10 +1,11 @@
+
 import tensorflow as tf
 
 class MedianModel(tf.keras.Model):
     def call(self, inputs):
         # Sort inputs based on latitude (axis=1)
         sorted_inputs = tf.sort(inputs, axis=1)  
-
+        
         # Compute the median index
         num_elements = tf.shape(sorted_inputs)[1]
         median_index = num_elements // 2
@@ -42,5 +43,5 @@ tflite_model = converter.convert()
 with open("median_model.tflite", "wb") as f:
     f.write(tflite_model)
 
-print("✅ TFLite model successfully created: median_model.tflite")
+print("TFLite model successfully created: median_model.tflite")
 
